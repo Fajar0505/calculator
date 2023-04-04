@@ -25,7 +25,7 @@ const inputOperator = (operator) => { // arrow funtion with operator parameter
         prevNumber = currentNumber; // set variable
     }
     calculationOperator = operator; // set variable
-    currentNumber = '0'; // set variable
+    currentNumber = ''; // set variable
 }
 
 const clearAll = () => {
