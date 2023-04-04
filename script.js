@@ -13,9 +13,12 @@ const updateScreen = (number) => { // the number parameter stored value of the '
 }
 
 const inputNumber = (number) => { // arrow function with 'number' parameter, the parameter for storing argument form 'numbervalue.target.value'
-    if (currentNumber === '0') { // if value of currentNumber is '0'. set argument to currentNumber 
+    if (currentNumber === 0) { // if value of currentNumber is '0'. set argument to currentNumber 
         currentNumber = number; // set argument to currentNumber
-    } else { // if value of currentNumber isn't 'o' add new number to currentNumber
+    } else if (currentNumber === "0") {
+        currentNumber = number; // set argument to currentNumber
+    }
+    else { // if value of currentNumber isn't 'o' add new number to currentNumber
         currentNumber += number; // to store every numbers are pressed on the 'currentNumber'
     }
 }
@@ -25,7 +28,7 @@ const inputOperator = (operator) => { // arrow funtion with operator parameter
         prevNumber = currentNumber; // set variable
     }
     calculationOperator = operator; // set variable
-    currentNumber = ''; // set variable
+    currentNumber = '0'; // set variable
 }
 
 const clearAll = () => {
@@ -89,4 +92,4 @@ clearBtn.addEventListener('click', () => {
 decimal.addEventListener('click', (event) => {
   inputDecimal(event.target.value);
   updateScreen(currentNumber);  
-})
+});
